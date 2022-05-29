@@ -9,7 +9,7 @@ model = load_model('QuickDraw.h5')
 
 def main():
     emojis = get_QD_emojis()
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     Lower_green = np.array([110, 50, 50])
     Upper_green = np.array([130, 255, 255])
     pts = deque(maxlen=512)
@@ -128,5 +128,5 @@ def blend_transparent(face_img, overlay_t_img):
 
 
 keras_predict(model, np.zeros((50, 50, 1), dtype=np.uint8))
-if __name__ == '__main__':
+if _name_ == 'main':
     main()
