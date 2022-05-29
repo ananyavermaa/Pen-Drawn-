@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 from keras.layers import Dense,Flatten, Conv2D
 from keras.layers import MaxPooling2D, Dropout
-from keras.utils import np_utils, print_summary
+from keras.utils import np_utils
 import tensorflow as tf
 from keras.models import Sequential
 from keras.callbacks import ModelCheckpoint
@@ -29,7 +29,7 @@ def keras_model(image_x, image_y):
     model.add(Dropout(0.5))
     model.add(Dense(num_of_classes, activation='softmax'))
 
-    model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
+    model.compile(loss="sparse_categorical_crossentropy", optimizer='Adam', metrics=['accuracy'])
     filepath = "QuickDraw.h5"
     checkpoint = ModelCheckpoint(filepath, monitor='val_acc', verbose=0, save_best_only=True, mode='max')
     callbacks_list = [checkpoint]
@@ -67,7 +67,7 @@ def main():
     train_x = train_x.reshape(train_x.shape[0], 28, 28, 1)
     test_x = test_x.reshape(test_x.shape[0], 28, 28, 1)
     model, callbacks_list = keras_model(28,28)
-    print_summary(model)
+    model.summary()
     model.fit(train_x, train_y, validation_data=(test_x, test_y), epochs=50, batch_size=64,
               callbacks=[TensorBoard(log_dir="QuickDraw")])
     model.save('QuickDraw.h5')
