@@ -3,6 +3,42 @@
 Have you ever thought of neural networks starting to recognize doodling? Here’s presenting to you “Pen Drawn” based on a futher applocation of Google’s Quick Draw.Quick Draw! is a Google-developed online game in which users are challenged to draw a representation of an item or idea, and the game then utilizes artificial intelligence to estimate what the drawings represent .“Pen Drawn” takes it a step further as it allows user to virtually draw on the screen keeping their videos on and having a more fun experience.
 Firstly ,lets have a look at Quick Draw : https://quickdraw.withgoogle.com/
 
+**Dataset 🗃️**
+
+Follow the documentation here to get the dataset. I got .npy files from google cloud for 14 drawings.
+
+Labels
+
+1)Apple 🍎
+
+2)Bowtie 🎀
+
+3)Toothbrush 🧹
+
+4)Door 🚪
+
+5)Tent ⛺
+
+6)Envelope ✉️
+
+7)Fish 🐟
+
+8)Ice Cream 🍦
+
+9)Lightning ⚡
+
+10)Candle 🕯️
+
+11)Moon 🌛
+
+12)Mountain 🗻
+
+13)Guitar 🎸
+
+14)Wristwatch ⌚
+
+15)Star ⭐
+
 **Code Requirements:**
 
 Install Conda for python which resolves all the dependencies for machine learning.
