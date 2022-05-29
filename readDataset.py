@@ -3,7 +3,7 @@ import os
 import pickle
 
 #files = os.listdir("F:\projects\QD\data")
-files = os.listdir("E:\QuickDraw_Project\data")
+files = os.listdir("D:\QuickDraw_Project\data")
 x = []
 x_load = []
 y = []
@@ -13,7 +13,7 @@ y_load = []
 def load_data():
     count = 0
     for file in files:
-        file = "E:\QuickDraw_Project\data\\" + file
+        file = "D:\QuickDraw_Project\data\\" + file
         x = np.load(file)
         x = x.astype('float32') / 255.
         x = x[0:10000, :]
